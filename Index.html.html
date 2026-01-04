@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj Gaund | Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* GLOBAL */
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0b1220;
+color:#fff;
+scroll-behavior:smooth;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+header{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#0b1220,#162235);
+animation:fadeUp 1s ease;
+}
+
+h1{font-size:45px;margin:0;}
+
+section{
+padding:60px 10%;
+animation:fadeUp 1s ease;
+}
+
+h2{
+font-size:32px;
+margin-bottom:30px;
+border-left:4px solid #ffd700;
+padding-left:12px;
+}
+
+/* ABOUT */
+/* SAME SIZE AS SKILLS */
+.about-card{
+  background:#162235;
+  border-left:5px solid #ffd700;
+  padding:25px 30px;
+  border-radius:12px;
+  max-width:1300px;
+  margin-top:20px;
+  font-size:16px;
+  line-height:1.8;
+  color:#ddd;
+  position:relative;
+  overflow:hidden;
+}
+
+/* SOFT GLOW LAYER */
+.glow-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,215,0,0.25),
+    transparent 70%
+  );
+  animation:softGlow 5s linear infinite;
+}
+
+/* KEEP TEXT ABOVE GLOW */
+.glow-card *{
+  position:relative;
+  z-index:1;
+}
+
+/* HOVER ENHANCEMENT */
+.glow-card:hover{
+  box-shadow:0 0 22px rgba(255,215,0,0.4);
+  transform:translateY(-6px);
+  transition:0.4s;
+}
+
+/* ANIMATION */
+@keyframes softGlow{
+  0%{transform:translateX(-100%);}
+  100%{transform:translateX(100%);}
+}
+
+
+
+/* SKILLS */
+.skill-box{
+background:#162235;
+border-left:5px solid #ffd700;
+padding:25px 30px;
+border-radius:12px;
+margin-bottom:22px;
+transition:.4s;
+}
+.skill-box:hover{
+background:#1d2b44;
+transform:translateX(10px);
+}
+.skill-title{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:20px;
+font-weight:bold;
+margin-bottom:10px;
+}
+.skill-title i{color:#ffd700;}
+.skill-desc{
+color:#d6d6d6;
+font-size:16px;
+line-height:24px;
+}
+
+/* PROJECTS */
+.project-card{
+background:#1b263b;
+padding:28px;
+border-radius:14px;
+border-left:5px solid #ffd700;
+margin-bottom:28px;
+transition:.4s;
+}
+.project-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 22px rgba(255,215,0,0.4);
+}
+.project-card h3{
+color:#ffd700;
+font-size:22px;
+margin-bottom:10px;
+}
+.project-tech{
+font-style:italic;
+color:#e0e0e0;
+margin-bottom:14px;
+}
+.project-card p{
+color:#ddd;
+font-size:16px;
+line-height:24px;
+margin:8px 0;
+}
+
+/* CERTIFICATIONS */
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+.cert-card{
+background:#1b263b;
+padding:24px;
+border-radius:16px;
+border-left:5px solid #ffd700;
+box-shadow:0 0 18px rgba(255,215,0,0.15);
+position:relative;
+transition:.4s;
+cursor:pointer;
+}
+
+.cert-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 26px rgba(255,215,0,0.45);
+}
+.cert-card h3{
+color:#ffd700;
+margin:0 0 6px 0;
+font-size:20px;
+}
+.cert-provider{
+color:#fff;
+font-size:15px;
+margin-bottom:10px;
+}
+.cert-desc{
+color:#ddd;
+font-size:15px;
+line-height:23px;
+}
+.cert-icon{
+position:absolute;
+top:18px;
+right:18px;
+font-size:22px;
+color:#ffd700;
+}
+
+/* CONTACT */
+.contact-box{
+background:#162235;
+padding:22px;
+border-radius:14px;
+border:2px solid rgba(255,215,0,0.3);
+margin-bottom:18px;
+display:flex;
+gap:15px;
+align-items:center;
+font-size:16px;
+transition:.4s;
+cursor:pointer;
+}
+.contact-box i{
+color:#ffd700;
+font-size:24px;
+}
+.contact-box:hover{
+background:#1d2b44;
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 0 22px rgba(255,215,0,0.45);
+border-color:#ffd700;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#0a141f;
+color:#bbb;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Raj Gaund</h1>
+<p>Cloud & IT Support Engineer | AWS | DevOps Enthusiast</p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+
+  <div class="about-card glow-card">
+    <p>
+      Aspiring Cloud Engineer with strong hands-on experience in AWS cloud services, Linux, Python, networking, and serverless
+      architectures. Passionate about designing secure, scalable, and cost-optimized cloud solutions using automation and DevOps
+      best practices. Seeking an entry-level cloud role to contribute to cloud infrastructure, reliability, and continuous improvement.
+    </p>
+  </div>
+</section>
+
+
+
+<section>
+<h2>Skills</h2>
+
+<div class="skill-box">
+<div class="skill-title"><i class="fa-solid fa-cloud"></i>AWS Cloud</div>
+<div class="skill-desc">IAM, EC2, S3, RDS, VPC, Lambda, DynamoDB, CloudWatch</div>
+</div>
+
+<div class="skill-box">
+<div class="skill-title"><i class="fa-solid fa-gears"></i>DevOps Practices</div>
+<div class="skill-desc">CI/CD workflow, Version Control, Containerization, Infrastructure as Code</div>
+</div>
+
+<div class="skill-box">
+<div class="skill-title"><i class="fa-solid fa-toolbox"></i>Tools & Platforms</div>
+<div class="skill-desc">AWS Console, AWS CLI, Docker, GitHub, GitHub Actions, VS Code, Postman, MySQL</div>
+</div>
+
+<div class="skill-box">
+<div class="skill-title"><i class="fa-solid fa-network-wired"></i>Networking Fundamentals</div>
+<div class="skill-desc">OSI, TCP/IP, Subnetting (CIDR), DNS, VPC , Security Groups, NACLs, Load Balancing</div>
+</div>
+
+<div class="skill-box">
+<div class="skill-title"><i class="fa-solid fa-robot"></i>Automation</div>
+<div class="skill-desc">Serverless Architecture, Scalability, Monitoring and Logging, Cost Optimization Basic</div>
+</div>
+
+</section>
+
+<section>
+<h2>Projects</h2>
+
+<div class="project-card">
+<h3> Logistics Management System</h3>
+<div class="project-tech">Python | MySQL | Web App | Role-Based Access</div>
+<p><b>Goal:</b> Automate product tracking, warehouse mapping, and dispatch operations for better workflow visibility.</p>
+<p><b>My Work:</b> Designed DB schema, CRUD modules, role-based login, dispatch logs, and automated reporting interface.</p>
+<p><b>Outcome:</b> 60% reduction in manual documentation & improved product traceability and operational accuracy.</p>
+</div>
+
+<div class="project-card">
+<h3> AWS Serverless Email Notification System</h3>
+<div class="project-tech">Lambda | SES | EventBridge | IAM | CloudWatch</div>
+<p><b>Goal:</b> Fully automated email alerts for events, schedules, and service triggers with zero manual involvement.</p>
+<p><b>Features Built:</b> CloudWatch triggers, Lambda processors, SES mailing, logging, retry flow & event scheduling.</p>
+<p><b>Impact:</b> Removed human dependency, saved time & improved business communication reliability.</p>
+</div>
+
+<div class="project-card">
+<h3> Serverless ETL Data Pipeline (DynamoDB → Glue → S3)</h3>
+<div class="project-tech">DynamoDB | AWS Glue | S3 | ETL</div>
+<p><b>Purpose:</b> Transform raw data into analytics-ready format for reporting dashboards automatically.</p>
+<p><b>Implementation:</b> Event-driven triggers, extract-transform-load jobs, S3 archival & cleanup policy.</p>
+<p><b>Result:</b> Zero manual export, instant analytics readiness, scalable pipeline for growing data volume.</p>
+</div>
+
+<div class="project-card">
+<h3> EC2 + RDS Deployment for Dockerized Node.js Application</h3>
+<div class="project-tech">EC2 | RDS MySQL | Docker | VPC | Security Groups</div>
+<p><b>Infrastructure:</b> Multi-tier architecture with app server on EC2 and DB on RDS using secure subnet communication.</p>
+<p><b>Key Tasks:</b> Dockerized app, environment variables setup, SG rules, DB subnet groups, backup & fail-safe config.</p>
+<p><b>Outcome:</b> Production-like deployment workflow with secure backend app connectivity.</p>
+</div>
+
+<div class="project-card">
+<h3> Ubuntu GUI on EC2 with RDP Access</h3>
+<div class="project-tech">EC2 | XRDP | Remote Desktop Protocol</div>
+<p><b>Why Built:</b> Create an on-cloud GUI environment for Linux administration & troubleshooting practice.</p>
+<p><b>Configured:</b> GUI desktop layer, RDP setup, ports & policies, remote access routing, user controls & access rules.</p>
+<p><b>Benefit:</b> Useful for training, server monitoring, and hands-on cloud computing tasks.</p>
+</div>
+
+</section>
+
+<section>
+<h2>Certifications</h2>
+
+<div class="cert-grid">
+
+    <div class="cert-card"
+         onclick="window.open('https://www.credly.com/users/raj-gaund/badges#credly')">
+<i class="fa-solid fa-gear cert-icon"></i>
+<h3>AWS Certified Cloud Practitioner (CLF-C02)</h3>
+<div class="cert-provider">Amazon Web Services | 2026</div>
+<div class="cert-desc">
+Validated understanding of AWS core services, cloud concepts, security, and pricing models.
+</div>
+</div>
+
+<div class="cert-card">
+<i class="fa-solid fa-database cert-icon"></i>
+<h3>SQL Analytics & Business Intelligence</h3>
+<div class="cert-provider">Databricks</div>
+<div class="cert-desc">
+Hands-on experience in SQL querying, analytics, and reporting for business insights.
+</div>
+</div>
+
+<div class="cert-card">
+<i class="fa-solid fa-brain cert-icon"></i>
+<h3>Generative AI Fundamentals</h3>
+<div class="cert-provider">Google Cloud Computing</div>
+<div class="cert-desc">
+Understanding of generative AI concepts, use cases, and responsible AI practices.
+</div>
+</div>
+
+<div class="cert-card">
+<i class="fa-solid fa-code cert-icon"></i>
+<h3>Python Programming Certification</h3>
+<div class="cert-provider">Infosys</div>
+<div class="cert-desc">
+Strong foundation in Python programming, scripting, and automation.
+</div>
+</div>
+
+<div class="cert-card">
+<i class="fa-solid fa-robot cert-icon"></i>
+<h3>DevOps with Agentic AI</h3>
+<div class="cert-provider">Virtual Workshop</div>
+<div class="cert-desc">
+Exposure to modern DevOps workflows and AI-assisted automation practices.
+</div>
+</div>
+
+</div>
+</section>
+
+</section>
+
+<section>
+<h2>Contact</h2>
+
+<div class="contact-box" onclick="location.href='mailto:rgaund682@gmail.com'">
+<i class="fa-solid fa-envelope"></i>rgaund682@gmail.com
+</div>
+
+<div class="contact-box" onclick="location.href='tel:8483908049'">
+<i class="fa-solid fa-phone"></i>8483908049
+</div>
+
+<div class="contact-box" onclick="window.open('https://www.linkedin.com/in/raj-gaund-53536731a')">
+<i class="fa-brands fa-linkedin"></i>LinkedIn
+</div>
+
+<div class="contact-box" onclick="window.open('https://github.com/rgaund6')">
+<i class="fa-brands fa-github"></i>GitHub
+</div>
+
+<div class="contact-box">
+<i class="fa-solid fa-location-dot"></i>Mumbai , Maharashtra
+</div>
+
+</section>
+
+<footer>
+© 2025 | Designed by Raj Gaund
+</footer>
+
+</body>
+</html>
